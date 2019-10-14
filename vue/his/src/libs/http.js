@@ -1,3 +1,4 @@
+/* eslint-disable */
 import qs from "qs";
 import axios from "axios";
 import Vue from "vue";
@@ -15,7 +16,7 @@ export const http = (function http() {
     // withCredentials: false,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
-    
+
     },
     transformRequest: [
       (data, config) => {
@@ -54,7 +55,7 @@ export const http = (function http() {
   });
 
   // 处理发送数据到服务器前的一些配置
-  instance.interceptors.request.use(function(request) {
+  instance.interceptors.request.use(function (request) {
     // 显示加载进度条
     // loadingbar.start();
     loadingCount++;
@@ -94,23 +95,23 @@ export const http = (function http() {
       //   })
       //  }
       // 结束进度条
-    //   if (--loadingCount <= 0) {
-    //     // loadingbar.finish();
-    //   }
+      //   if (--loadingCount <= 0) {
+      //     // loadingbar.finish();
+      //   }
 
-    //   if (response.status < 200 || response.status >= 300) {
-    //     return Promise.reject(response.statusText);
-    //   }
+      //   if (response.status < 200 || response.status >= 300) {
+      //     return Promise.reject(response.statusText);
+      //   }
       // 服务器没有返回正确的JSON格式
-    //   if (typeof response.data === "string" && !response.data) {
-    //     Toast({
-    //       message: "服务器没有响应正确的数据, 请检查参数是否正确。",
-    //       duration: 1000
-    //     });
-    //     return Promise.reject(
-    //       new Error("服务器没有响应正确的数据, 请检查参数是否正确。")
-    //     );
-    //   }
+      //   if (typeof response.data === "string" && !response.data) {
+      //     Toast({
+      //       message: "服务器没有响应正确的数据, 请检查参数是否正确。",
+      //       duration: 1000
+      //     });
+      //     return Promise.reject(
+      //       new Error("服务器没有响应正确的数据, 请检查参数是否正确。")
+      //     );
+      //   }
       // if (response.data && response.data.code < 0) {
       //   return Promise.reject('您还没有登录, 为您跳转到登录页');
       // }
@@ -118,11 +119,7 @@ export const http = (function http() {
     },
     error => {
       // 关闭全屏进度条
-      Toast({
-        showClose: true,
-        message: "网络错误, 请检查网络状况.",
-        type: "error"
-      });
+
       if (error && error.response) {
         return Promise.reject(
           new Error({
@@ -132,7 +129,10 @@ export const http = (function http() {
         );
       } else {
         return Promise.reject(
-          new Error({ status: 500, statusText: "服务器故障" })
+          new Error({
+            status: 500,
+            statusText: "服务器故障"
+          })
         );
       }
     }

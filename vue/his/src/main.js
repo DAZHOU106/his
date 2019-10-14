@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import http from "@/libs/http"
+import "./styles/index.scss"
+import Element from 'element-ui';
+Vue.use(Element, { size: 'small', zIndex: 3000 });
 Vue.config.productionTip = false
 Vue.prototype.$http = http
 new Vue({
