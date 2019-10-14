@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f99bc7bd-9a01-4f54-9b9c-3e8f84894d20" name="Default Changelist" comment="" />
+    <list default="true" id="f99bc7bd-9a01-4f54-9b9c-3e8f84894d20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PHP/application/admin/controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/application/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/application/common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/application/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/application/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/application/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/application/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/application/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/application/index/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/public/index.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,22 +17,44 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/PHP/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-captcha" />
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-helper" />
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-image" />
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-installer" />
+      <path value="$PROJECT_DIR$/PHP/vendor/composer" />
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-migration" />
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-mongo" />
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-oracle" />
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-queue" />
+      <path value="$PROJECT_DIR$/PHP/vendor/topthink/think-worker" />
+      <path value="$PROJECT_DIR$/PHP/vendor/workerman/workerman" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1S6lzyV7sYh7zbGndtqk1OguHsE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../php/php.exe" />
+    <property name="last_opened_file_path" value="E:/Git/bin/git.exe" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -49,11 +79,25 @@
       <option name="presentableId" value="Default" />
       <updated>1570892192850</updated>
       <workItem from="1570892194089" duration="2219000" />
-      <workItem from="1570929773636" duration="5234000" />
+      <workItem from="1570929773636" duration="11646000" />
+      <workItem from="1571054499515" duration="325000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
