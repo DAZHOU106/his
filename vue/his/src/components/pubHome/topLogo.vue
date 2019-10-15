@@ -20,35 +20,42 @@ export default {};
 
 <style lang="scss" scoped>
 .top-logo-con {
-width:100%;
-.top-logo {
   width: auto;
   min-width: 1000px;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 10px 10px;
-  .logo-img-con {
-    float: left;
-    margin-top: 10px;
-    cursor: pointer;
-    .logo-sm {
-      margin: 0 0 20px 20px;
-    }
-  }
-  .login-register {
-    float: right;
-    font-size: 18px;
-    line-height: 106px;
-    color: #333333;
-    .login,
-    .register {
+  .top-logo {
+    width: auto;
+    width: 1000px;
+    margin: 0 auto;
+    .logo-img-con {
+      padding-top: 15px;
+      display: inline-block;
       cursor: pointer;
+      margin-left: 20px;
+      .logo-big {
+        height: 70px;
+      }
+      .logo-sm {
+        margin: 0 0 10px 20px;
+      }
     }
-    .login:hover,
-    .register:hover {
-      color: #2ebfe1;
+    .login-register {
+      float: right;
+      font-size: 14px;
+      line-height: 100px;
+      color: #333333;
+      margin-right: 10px;
+      span {
+        margin: 0 5px;
+      }
+      .login,
+      .register {
+        cursor: pointer;
+      }
+      .login:hover,
+      .register:hover {
+        color: #2ebfe1;
+      }
     }
   }
-}
 }
 </style>

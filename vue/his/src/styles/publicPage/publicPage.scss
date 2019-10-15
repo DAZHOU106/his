@@ -1,3 +1,90 @@
 .pubHome-wrapper {
-    width: 100%;
+  width: 100%;
+    .pub-home-layout {
+        width:auto;
+        min-width: 1000px;
+        .layout-inner {
+            width:1000px;
+            margin:0 auto;
+            padding: 0 20px;
+        }
+    }
+    
+  .swiper-con {
+    min-width: 1000px;
+    background-color: cyan;
+  }
+    .banner-img { 
+      width: 100% ;
+      max-height:500px;
+  }
+  .pati-serv-con {
+      padding-top:20px;
+  }
+  .pati-guide{
+      float: left;
+      width:70%;
+  }
+  .line {
+      width:6px;
+      background:#ffbd27;
+      height:30px;
+      float: left;
+  }
+  .title {
+      line-height: 30px;
+      margin-left: 20px;
+      font-size: 18px;
+      color:#333333;
+  }
+  .el-row{
+      margin-top:20px;
+      .guid-btn {
+          float: left;
+        background-color: #2ebfe1;
+        border-radius: 2px;
+        height: 57px;
+        width: 57px;
+        padding: 11px;
+        text-align: center;
+        line-height: 20px;
+      }
+      .info {
+        float: left;
+        font-size: 14px;
+        height:57px;
+        position: relative;
+        padding-left:10px;
+      }
+      .info-name {
+          font-size: 14px;
+      }
+      .info-detail {       
+          font-size: 12px;
+          color:#666;
+          margin-top:25px;
+      }
+  }
+  .pati-service {
+      float: left;
+      padding-left: 10px;
+      .btn-service {
+          background-color:#2ebfe1 ;
+          border-radius: 2px;
+          color:#ffffff;
+          padding: 5px;
+          height:45px;
+          width:200px;
+      }
+      .btn-service {
+          
+      }
+      .service-name {
+          line-height: 30px;;
+          margin-left:10px;
+      }
+  }
+
+ 
+  
 }
