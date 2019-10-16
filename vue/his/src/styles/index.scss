@@ -1,4 +1,6 @@
 // 重置浏览器自带样式
 @import './normalize.css';
+// 样式变量
+@import './variable.scss';
 
 @import './publicPage/publicPage.scss';

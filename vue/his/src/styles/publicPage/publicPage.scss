@@ -9,6 +9,25 @@
             padding: 0 20px;
         }
     }
+    .page-btn {
+        background-color: $theme-yellow;
+        border-radius: 5px;
+        color:#ffffff;
+        padding: 5px;
+        display: inline-block;
+        margin-left:20px;
+        cursor: pointer;
+        .iconzuojiantou,.iconyoujiantou,.iconmore{
+            font-size: 18px;
+        }
+    }
+    .page-ctrl {
+        float: right;
+    }
+    .intro-title {
+        padding-bottom:20px;
+    }
+    // 以上主页公共部分
     
   .swiper-con {
     min-width: 1000px;
@@ -36,6 +55,7 @@
       margin-left: 20px;
       font-size: 18px;
       color:#333333;
+      float: left;
   }
   .el-row{
       margin-top:40px;
@@ -48,6 +68,10 @@
         padding: 11px;
         text-align: center;
         line-height: 20px;
+        cursor: pointer;
+      }
+      .guid-btn:hover{
+          background-color: #ffbd27;
       }
       .info {
         float: left;
@@ -69,6 +93,7 @@
       float: left;
       padding-left: 10px;
       .btn-service {
+          transition:box-shadow .2s ease ;
           background-color:#2ebfe1 ;
           border-radius: 2px;
           color:#ffffff;
@@ -76,20 +101,20 @@
           height:42px;
           width:200px;
           line-height: 20px;
-      }
-      .btn-group{
-
-      }
-      .btn-service {
           margin-top:10px;
+          cursor: pointer;
           img {
               float: left;
           }
       }
+     
       .btn-service:first-child{
           margin-top:40px;
       }
-      
+      .btn-service:hover {
+          background-color: $theme-yellow;
+          box-shadow: 7px 5px 5px #cdcdcd;
+      }
       .service-name {
           margin-left:10px;
           float: left;
@@ -100,13 +125,100 @@
       margin-top:20px;
   }
   .special-pic {
-    height: 200px;
-    background: #ffbd27;
+    height: 180px;
+    
   }
-  .special-name {
-      background:#2ebfe1 ;
-      height:200px;
+  .special-name {    
+      height:180px;
+      position: relative;
+      cursor: pointer;
+      .intro {
+          position: absolute;
+          font-size: 20px;
+          text-align: center;
+          width: 100%;
+          color:#fff;
+      }
+      .intro:first-child {
+          top:35%;
+      }
+      .intro:last-child {
+        top:45%;
+        margin-top:20px;
+      }
   }
  
-  
+  .spec-img {
+      height:100%;
+      width:100%;
+  }
+ 
+  .doc-intro {
+      margin-top:20px;
+      .doc-info{
+        background-color: $theme-light-grey;    
+      }
+      .dpc-avatar {
+          width:180px;
+      }
+      .avatar-img {
+        width: 100%;
+      }
+      .info-detail {
+          font-size: 14px;
+          padding:5px 10px 5px 10px;;
+          div {
+           line-height: 20px;
+          }
+      }
+      .check-detail {
+        color:$theme-blue;
+        float: right;
+        cursor: pointer;
+      }
+    
+    
+  }
+
+  .department-intro {
+      margin-top:20px;
+      background-color: $theme-light-grey;
+      padding: 30px 0;
+     .depart-info {
+         height: 150px;
+         background-color: #fff;
+         padding: 25px 10px;
+     }
+     .depart-logo {
+        float: left;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: $theme-blue;    
+     }
+     .depart-preview {
+         float: left;
+         height:100px;
+         padding-left: 15px;
+         font-size: 14px;
+         width: calc(100% - 100px)
+     }
+     .depart-name {
+         color:#333
+     }
+     .manage-doctor {
+         color:#999;
+         font-size: 14px;;
+         padding: 5px 0;
+         border-bottom: 1px solid #ededed;
+     }
+     .depart-word {
+        color:#999;
+        font-size: 12px;;
+        padding-top: 5px;
+        height: 60px;
+        overflow: hidden;
+     }
+
+  }
 }

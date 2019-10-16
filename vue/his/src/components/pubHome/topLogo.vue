@@ -27,7 +27,7 @@ export default {};
     width: 1000px;
     margin: 0 auto;
     .logo-img-con {
-      padding-top: 15px;
+      padding-top: 5px;
       display: inline-block;
       cursor: pointer;
       margin-left: 20px;
@@ -41,7 +41,7 @@ export default {};
     .login-register {
       float: right;
       font-size: 14px;
-      line-height: 100px;
+      line-height: 80px;
       color: #333333;
       margin-right: 10px;
       span {
