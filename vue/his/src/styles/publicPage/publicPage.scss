@@ -1,224 +1,287 @@
 .pubHome-wrapper {
   width: 100%;
-    .pub-home-layout {
-        width:auto;
-        min-width: 1000px;
-        .layout-inner {
-            width:1000px;
-            margin:0 auto;
-            padding: 0 20px;
-        }
+  .pub-home-layout {
+    width: auto;
+    min-width: 1000px;
+    .layout-inner {
+      width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    .page-btn {
-        background-color: $theme-yellow;
-        border-radius: 5px;
-        color:#ffffff;
-        padding: 5px;
-        display: inline-block;
-        margin-left:20px;
-        cursor: pointer;
-        .iconzuojiantou,.iconyoujiantou,.iconmore{
-            font-size: 18px;
-        }
+  }
+  .page-btn {
+    background-color: $theme-yellow;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 5px;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+    .iconzuojiantou,
+    .iconyoujiantou,
+    .iconmore {
+      font-size: 18px;
     }
-    .page-ctrl {
-        float: right;
-    }
-    .intro-title {
-        padding-bottom:20px;
-    }
-    // 以上主页公共部分
-    
+  }
+  .page-ctrl {
+    float: right;
+  }
+  .intro-title {
+    padding-bottom: 20px;
+  }
+  
+  // 以上主页公共部分
+
   .swiper-con {
     min-width: 1000px;
     background-color: #2ebfe1;
   }
-    .banner-img { 
-      width: 100% ;
+  .banner-img {
+    width: 100%;
   }
   .pati-serv-con {
-      padding:20px 0 40px;
-      background: #f1f1f1;
+    padding: 20px 0 40px;
+    background: #f1f1f1;
   }
-  .pati-guide{
-      float: left;
-      width:78%;
+  .pati-guide {
+    float: left;
+    width: 78%;
   }
   .line {
-      width:6px;
-      background:#ffbd27;
-      height:30px;
-      float: left;
+    width: 6px;
+    background: #ffbd27;
+    height: 30px;
+    float: left;
   }
   .title {
-      line-height: 30px;
-      margin-left: 20px;
-      font-size: 18px;
-      color:#333333;
-      float: left;
+    line-height: 30px;
+    margin-left: 20px;
+    font-size: 18px;
+    color: #333333;
+    float: left;
   }
-  .el-row{
-      margin-top:40px;
-      .guid-btn {
-          float: left;
-        background-color: #2ebfe1;
-        border-radius: 2px;
-        height: 57px;
-        width: 57px;
-        padding: 11px;
-        text-align: center;
-        line-height: 20px;
-        cursor: pointer;
-      }
-      .guid-btn:hover{
-          background-color: #ffbd27;
-      }
-      .info {
-        float: left;
-        font-size: 14px;
-        height:57px;
-        position: relative;
-        padding-left:10px;
-      }
-      .info-name {
-          font-size: 14px;
-      }
-      .info-detail {       
-          font-size: 12px;
-          color:#666;
-          margin-top:25px;
-      }
+  .el-row {
+    margin-top: 40px;
+    .guid-btn {
+      float: left;
+      background-color: #2ebfe1;
+      border-radius: 2px;
+      height: 57px;
+      width: 57px;
+      padding: 11px;
+      text-align: center;
+      line-height: 20px;
+      cursor: pointer;
+    }
+    .guid-btn:hover {
+      background-color: #ffbd27;
+    }
+    .info {
+      float: left;
+      font-size: 14px;
+      height: 57px;
+      position: relative;
+      padding-left: 10px;
+    }
+    .info-name {
+      font-size: 14px;
+    }
+    .info-detail {
+      font-size: 12px;
+      color: #666;
+      margin-top: 25px;
+    }
   }
   .pati-service {
+    float: left;
+    padding-left: 10px;
+    .btn-service {
+      transition: box-shadow 0.2s ease;
+      background-color: #2ebfe1;
+      border-radius: 2px;
+      color: #ffffff;
+      padding: 5px 25px;
+      height: 42px;
+      width: 200px;
+      line-height: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      img {
+        float: left;
+      }
+    }
+
+    .btn-service:first-child {
+      margin-top: 40px;
+    }
+    .btn-service:hover {
+      background-color: $theme-yellow;
+      box-shadow: 7px 5px 5px #cdcdcd;
+    }
+    .service-name {
+      margin-left: 10px;
       float: left;
-      padding-left: 10px;
-      .btn-service {
-          transition:box-shadow .2s ease ;
-          background-color:#2ebfe1 ;
-          border-radius: 2px;
-          color:#ffffff;
-          padding: 5px 25px;
-          height:42px;
-          width:200px;
-          line-height: 20px;
-          margin-top:10px;
-          cursor: pointer;
-          img {
-              float: left;
-          }
-      }
-     
-      .btn-service:first-child{
-          margin-top:40px;
-      }
-      .btn-service:hover {
-          background-color: $theme-yellow;
-          box-shadow: 7px 5px 5px #cdcdcd;
-      }
-      .service-name {
-          margin-left:10px;
-          float: left;
-          line-height: 35px;
-      }
+      line-height: 35px;
+    }
   }
   .special-point {
-      margin-top:20px;
+    margin-top: 20px;
   }
   .special-pic {
     height: 180px;
-    
   }
-  .special-name {    
-      height:180px;
-      position: relative;
-      cursor: pointer;
-      .intro {
-          position: absolute;
-          font-size: 20px;
-          text-align: center;
-          width: 100%;
-          color:#fff;
-      }
-      .intro:first-child {
-          top:35%;
-      }
-      .intro:last-child {
-        top:45%;
-        margin-top:20px;
-      }
+  .special-name {
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    .intro {
+      position: absolute;
+      font-size: 20px;
+      text-align: center;
+      width: 100%;
+      color: #fff;
+    }
+    .intro:first-child {
+      top: 35%;
+    }
+    .intro:last-child {
+      top: 45%;
+      margin-top: 20px;
+    }
   }
- 
+
   .spec-img {
-      height:100%;
-      width:100%;
+    height: 100%;
+    width: 100%;
   }
- 
+
   .doc-intro {
-      margin-top:20px;
-      .doc-info{
-        background-color: $theme-light-grey;    
-      }
-      .dpc-avatar {
-          width:180px;
-      }
-      .avatar-img {
-        width: 100%;
-      }
-      .info-detail {
-          font-size: 14px;
-          padding:5px 10px 5px 10px;;
-          div {
-           line-height: 20px;
-          }
-      }
-      .check-detail {
-        color:$theme-blue;
-        float: right;
+    margin-top: 20px;
+    .doc-info {
+      background-color: $theme-light-grey;
+    }
+
+    .doc-avatar {
         cursor: pointer;
+    }
+    .avatar-img {
+      width: 100%;
+    }
+    .info-detail {
+      font-size: 14px;
+      padding: 5px 10px 5px 10px;
+      div {
+        line-height: 20px;
       }
-    
-    
+    }
+    .check-detail {
+      color: $theme-blue;
+      float: right;
+      cursor: pointer;
+    }
   }
 
   .department-intro {
-      margin-top:20px;
-      background-color: $theme-light-grey;
-      padding: 30px 0;
-     .depart-info {
-         height: 150px;
-         background-color: #fff;
-         padding: 25px 10px;
-     }
-     .depart-logo {
-        float: left;
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color: $theme-blue;    
-     }
-     .depart-preview {
-         float: left;
-         height:100px;
-         padding-left: 15px;
-         font-size: 14px;
-         width: calc(100% - 100px)
-     }
-     .depart-name {
-         color:#333
-     }
-     .manage-doctor {
-         color:#999;
-         font-size: 14px;;
-         padding: 5px 0;
-         border-bottom: 1px solid #ededed;
-     }
-     .depart-word {
-        color:#999;
-        font-size: 12px;;
-        padding-top: 5px;
-        height: 60px;
+    margin-top: 20px;
+    background-color: $theme-light-grey;
+    padding: 30px 0;
+    .depart-info {
+      height: 150px;
+      background-color: #fff;
+      padding: 25px 10px;
+      cursor: pointer;
+    }
+    .depart-logo {
+      float: left;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background-color: $theme-blue;
+      text-align: center;
+      .logo {
+        line-height: 100px;
+        color: #fff;
+        font-size: 14px;
+      }
+    }
+    .depart-preview {
+      float: left;
+      height: 100px;
+      padding-left: 15px;
+      font-size: 14px;
+      width: calc(100% - 100px);
+    }
+    .depart-name {
+      color: #333;
+    }
+    .manage-doctor {
+      color: #999;
+      font-size: 14px;
+      padding: 5px 0;
+      border-bottom: 1px solid #ededed;
+    }
+    .depart-word {
+      color: #999;
+      font-size: 12px;
+      padding-top: 5px;
+      line-height: 15px;;
+      height: 51px;
+      overflow: hidden;
+    }
+  }
+  .news-notice {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    .news-con {
+      width: 68%;
+      float: left;
+    }
+    .news-title {
+      padding-bottom: 20px;
+    }
+    .title-nav {
+      float: right;
+      line-height: 30px;
+      font-size: 12px;
+    }
+    .news-left {
+      float: left;
+    }
+    .news-right {
+      float: left;
+      margin-left: 25px;
+    }
+    
+    .news-item {
+      font-size: 12px;
+      color: #999;
+      margin-top: 10px;
+      border-bottom: 1px solid #ededed;
+      .icon-news {
+        vertical-align: center;
+        width: 23px;
+        padding-right: 10px;
+      }
+      .content {
+        display: inline-block;
+        width: 240px;
+        line-height: 17px;
+        padding-right: 15px;
+        white-space: nowrap;
         overflow: hidden;
-     }
+        text-overflow: ellipsis;
+      }
+      .time {
+        line-height: 17px;
+        vertical-align: top;
+      }
+    }
 
+    .notice-con {
+      float: left;
+    }
+    .notice-title {
+      padding-bottom: 20px;
+    }
   }
 }

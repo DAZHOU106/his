@@ -61,7 +61,7 @@
           </el-row>
         </div>
         <div class="pati-service">
-          <div class="service-title">
+          <div class="service-title clearfix">
             <div class="line"></div>
             <span class="title">患者服务</span>
           </div>
@@ -122,12 +122,12 @@
       <div class="layout-inner">
         <div class="intro-title clearfix">
           <div class="line"></div>
-          <div class="title">名医风采</div>
+          <div class="title">专家风采</div>
           <div class="page-ctrl">
-            <div class="page-btn" slot="button-prev" title="上一组">
+            <div class="page-btn page-btn-prev" slot="button-prev" title="上一组">
               <i class="iconfont iconzuojiantou"></i>
             </div>
-            <div class="page-btn" slot="button-next" title="下一组">
+            <div class="page-btn page-btn-next" slot="button-next" title="下一组">
               <i class="iconfont iconyoujiantou"></i>
             </div>
             <div class="page-btn" title="更多医生">
@@ -135,7 +135,7 @@
             </div>
           </div>
         </div>
-        <swiper :options="docOption">
+        <swiper :options="docOption" style="padding-bottom:10px;">
           <swiper-slide v-for="(item,index) in 10" :key="index">
             <div class="doc-info">
               <div class="doc-avatar">
@@ -162,13 +162,13 @@
           <div class="line"></div>
           <div class="title">科室介绍</div>
           <div class="page-ctrl">
-            <div class="page-btn" slot="button-prev" title="上一组">
+            <div class="page-btn depart-prev" slot="button-prev" title="上一组">
               <i class="iconfont iconzuojiantou"></i>
             </div>
-            <div class="page-btn" slot="button-next" title="下一组">
+            <div class="page-btn depart-next" slot="button-next" title="下一组">
               <i class="iconfont iconyoujiantou"></i>
             </div>
-            <div class="page-btn" title="更多医生">
+            <div class="page-btn" title="更多科室">
               <i class="iconfont iconmore"></i>
             </div>
           </div>
@@ -177,12 +177,14 @@
           <swiper-slide v-for="(item,index) in 10" :key="index">
             <div class="depart-info clearfix">
               <div class="depart-logo">
-                <img src alt class="depart-logo-img" />
+                <span class="logo">普外科</span>
               </div>
               <div class="depart-preview">
                 <div class="depart-name">普外科</div>
                 <div class="manage-doctor">主任：孙笑川</div>
-                <div class="depart-word">主任助理：袁宏钧、郑雅娟浙江省人民医院乳腺甲状腺外科是浙江省最早设立，专门诊治乳腺、甲状腺和甲状旁腺疾病的专业化科室。集临床、科研、教学为一体，设有专科门诊和一个住…</div>
+                <div
+                  class="depart-word"
+                >主任助理：袁宏钧、郑雅娟浙江省人民医院乳腺甲状腺外科是浙江省最早设立，专门诊治乳腺、甲状腺和甲状旁腺疾病的专业化科室。集临床、科研、教学为一体，设有专科门诊和一个住…</div>
               </div>
             </div>
           </swiper-slide>
@@ -190,17 +192,60 @@
         </swiper>
       </div>
     </div>
+    <!-- 新闻和通知 -->
+    <div class="news-notice pub-home-layout">
+      <div class="layout-inner  clearfix">
+        <div class="news-con  clearfix">
+          <div class="news-title clearfix">
+            <div class="line"></div>
+            <div class="title">资讯中心</div>
+          </div>
+          <div class="news-content clearfix">
+            <div class="news-left">
+              <div class="news-item" v-for="(item, index) in 8" :key="index">
+                <img src="@/assets/images/ic_home_news.png" alt class="icon-news" />
+                <span class="content">中央委员会特批今天是个好日子十八大的五年来</span>
+                <span class="time">07-09</span>
+              </div>
+            </div>
+            <div class="news-right">
+              <div class="news-item" v-for="(item, index) in 8" :key="index">
+                <img src="@/assets/images/ic_home_news.png" alt class="icon-news" />
+                <span class="content">中央委员会特批今天是个好日子十八大的五年来</span>
+                <span class="time">07-09</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="notice-con  clearfix" style="margin-left:20px;">
+          <div class="notice-title clearfix">
+            <div class="line"></div>
+            <div class="title">通知中心</div>
+          </div>
+          <div class="news-left">
+              <div class="news-item" v-for="(item, index) in 8" :key="index">
+                <img src="@/assets/images/ic_home_news.png" alt="" class="icon-news">
+                <span class="content">123</span>
+                 <span class="time">123</span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <pub-footer/>
   </div>
 </template>
 
 <script>
 import TopLogo from "@/components/pubHome/topLogo";
 import TopNav from "@/components/pubHome/topNav";
+import PubFooter from "@/components/pubHome/pubFooter"
 export default {
   name: "pubHome",
   components: {
     TopLogo,
-    TopNav
+    TopNav,
+    PubFooter
   },
   data() {
     return {
@@ -306,8 +351,8 @@ export default {
         //   disableOnInteraction: false
         // },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
+          nextEl: ".page-btn-next",
+          prevEl: ".page-btn-prev"
         }
       },
       departOption: {
@@ -319,8 +364,8 @@ export default {
         //   disableOnInteraction: false
         // },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
+          nextEl: ".depart-next",
+          prevEl: ".depart-prev"
         }
       }
     };

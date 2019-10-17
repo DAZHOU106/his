@@ -2,33 +2,16 @@
   <div class="top-nav-con" @mouseleave="hideNav">
     <div class="top-nav">
       <ul class="clearfix">
-        <li class="top-nav-item">
-          <router-link to tag="span">网站首页</router-link>
-        </li>
-        <li class="top-nav-item">
-          <router-link to tag="span">医院介绍</router-link>
-        </li>
-        <li class="top-nav-item">
-          <router-link to tag="span">智慧医院</router-link>
-        </li>
-        <li class="top-nav-item">
-          <router-link to tag="span">医疗团队</router-link>
-        </li>
-        <li class="top-nav-item">
-          <router-link to tag="span">就医指南</router-link>
-        </li>
-        <li class="top-nav-item">
-          <router-link to tag="span">新闻中心</router-link>
-        </li>
-        <li class="top-nav-item">
-          <router-link to tag="span">党建工作</router-link>
-        </li>
-        <li class="top-nav-item">
-          <router-link to tag="span">网站首页</router-link>
+        <li class="top-nav-item" v-for="(item, index) in allNavData" :key="index" @mouseenter="showNav(item.child)" >
+          <router-link to tag="span">{{item.title}}</router-link>
         </li>
       </ul>
     </div>
-    <!-- <div class="second-menu" v-show="isShowNav" @mouseleave="hideNav">123</div> -->
+    <div class="second-menu" v-show="isShowNav" @mouseleave="hideNav">
+        <div class="second-menu-inner">
+          <div v-for="(item, index) in secNavList" :key="index">{{item}}</div>
+        </div>
+      </div>
   </div>
   <!-- ???问题 -->
 </template>
@@ -38,13 +21,44 @@ export default {
   name: "nav-bar",
   data() {
     return {
-      isShowNav: false
+      isShowNav: false,
+      allNavData:[
+        {
+          title:"首页",
+          child:[]
+        },
+        {
+          title: "医院介绍",
+          child:[
+            {title:'医院概况',name:'hospIntro'},
+           {title:'领导介绍',name:'leaderIntro'},
+            ]
+        },
+          {
+          title: "智慧医院",
+          child:['医院概况',"领导界面"]
+        },
+         {
+          title: "医院介绍",
+          child:['医院概况',"领导界面"]
+        },
+         {
+          title: "医院介绍",
+          child:['医院概况',"领导界面"]
+        },
+      ],
+      secNavList:[]
     };
   },
   methods: {
-    showNav(e) {
-      this.isShowNav = true;
-        console.log(e)
+    showNav(child) {   
+        console.log(child)
+      this.secNavList = child
+      if(this.secNavList.length>0){
+        this.isShowNav=true;
+      } else {
+        this.isShowNav = false;
+      }
       
     },
     hideNav() {
@@ -87,15 +101,19 @@ export default {
   }
   .second-menu {
     // display: none;
-    transition: .2s ease;
     position: absolute;
     z-index: 2000;
     width: 100%;
-    top: 56px;
+    min-width: 1000px;
+    top: 60px;
     padding: 30px 0;
     background: rgba(255, 255, 255, 1);
     border-radius: 2px 0px 0px 0px;
     color: #221815;
+  }
+  .second-menu-inner {
+    width: 1000px;
+    margin: 0 auto
   }
 }
 </style>
