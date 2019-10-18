@@ -38,7 +38,7 @@
             </el-col>
           </el-row>
           <el-row>
-            <el-col :span="8" v-for="(item, index) in line1" :key="index">
+            <el-col :span="8" v-for="(item, index) in line2" :key="index">
               <div class="guid-btn">
                 <img :src="item.img" alt />
               </div>
@@ -49,7 +49,7 @@
             </el-col>
           </el-row>
           <el-row>
-            <el-col :span="8" v-for="(item, index) in line1" :key="index">
+            <el-col :span="8" v-for="(item, index) in line3" :key="index">
               <div class="guid-btn">
                 <img :src="item.img" alt />
               </div>
@@ -63,7 +63,7 @@
         <div class="pati-service">
           <div class="service-title clearfix">
             <div class="line"></div>
-            <span class="title">患者服务</span>
+            <span class="title">医患服务</span>
           </div>
           <div class="btn-group">
             <div class="btn-service" v-for="(item, index) in btnGroup" :key="index">
@@ -250,81 +250,81 @@ export default {
   data() {
     return {
       imgList: [
-        require("@/assets/images/1.jpg"),
-        require("@/assets/images/nethis.png"),
-        require("@/assets/images/党.png")
+        require("@/assets/images/anhuiyiyuan.jpg"),
+        require("@/assets/images/banner_z.png"),
+        require("@/assets/images/70year.jpg")
       ],
       btnGroup: [
         {
-          name: "互联网医院",
-          img: require("@/assets/images/ic_home_internet.png")
+          name: "登录/注册",
+          img: require("images/ic_home_internet.png")
         },
         {
-          name: "互联网医院",
-          img: require("@/assets/images/ic_home_internet.png")
+          name: "预约挂号",
+          img: require("images/ic_home_register.png")
         },
         {
-          name: "互联网医院",
-          img: require("@/assets/images/ic_home_internet.png")
+          name: "化验单查询",
+          img: require("images/ic_home_inquire.png")
         },
         {
-          name: "互联网医院",
-          img: require("@/assets/images/ic_home_internet.png")
+          name: "互动交流",
+          img: require("images/ic_home_advisory.png")
         },
         {
-          name: "互联网医院",
-          img: require("@/assets/images/ic_home_internet.png")
+          name: "满意度调查",
+          img: require("images/ic_home_survey.png")
         }
       ],
       line1: [
         {
           name: "门诊指南",
           detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          img: require("images/ic_home_outpatient.png")
         },
         {
-          name: "门诊指南",
-          detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          name: "急诊指南",
+          detail: "急诊流程，急诊就诊范围",
+          img: require("images/ic_home_emergency.png")
         },
         {
-          name: "门诊指南",
-          detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          name: "住院指南",
+          detail: "住院须知、住院流程等信息",
+          img: require("images/ic_home_hospitalization.png")
         }
       ],
       line2: [
         {
-          name: "门诊指南",
-          detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          name: "预约挂号",
+          detail: "预约挂号须知说明",
+          img: require("images/ic_home_reservation.png")
         },
         {
-          name: "门诊指南",
-          detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          name: "医保政策",
+          detail: "医保卡办理说明，报销须知等",
+          img: require("images/ic_home_insurance.png")
         },
         {
-          name: "门诊指南",
-          detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          name: "诊室分布",
+          detail: "医院诊室分布图文介绍",
+          img: require("images/ic_home_clinic.png")
         }
       ],
       line3: [
         {
-          name: "门诊指南",
-          detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          name: "医院地图",
+          detail: "医院地图位置，周边建筑",
+          img: require("images/ic_home_map.png")
         },
         {
-          name: "门诊指南",
-          detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          name: "泊车指南",
+          detail: "周围停车场位置",
+          img: require("images/ic_home_parking.png")
         },
         {
-          name: "门诊指南",
-          detail: "医院门诊挂号示意图等信息",
-          img: require("@/assets/images/ic_home_outpatient.png")
+          name: "服务电话",
+          detail: "医院常用联系电话头数方式",
+          img: require("images/ic_home_tel.png")
         }
       ],
 

@@ -1,0 +1,40 @@
+.hosintro-wrapper {
+  .top-banner {
+    background: url(~images/pic_banner_introduction.jpeg) center center;
+    min-width: 1000px;
+    height: 220px;
+  }
+  .link-active {
+    background: $theme-blue;
+  }
+  .intro-main-con {
+    width: 1000px;
+    margin: 40px auto 0;
+  }
+  .intro-con-right {
+      float: left;
+      margin-left:25px;
+      width: calc(100% - 225px)
+  }
+ .preview-title {
+     width:100%;
+     .title {
+         line-height: 30px;
+         margin-left: 20px;
+         font-size: 18px;
+         padding-bottom: 30px;
+     }
+ }
+ .hos-img {
+     width: 700px;
+     margin: 0 auto;
+     img{
+         width:100%;
+     }
+ }
+ .pre-intro-article {
+    color:#333;
+    font-size: 16px;
+    line-height: 1.2;
+ }
+}

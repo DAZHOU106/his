@@ -2,16 +2,18 @@
   <div class="top-nav-con" @mouseleave="hideNav">
     <div class="top-nav">
       <ul class="clearfix">
-        <li class="top-nav-item" v-for="(item, index) in allNavData" :key="index" @mouseenter="showNav(item.child)" >
-          <router-link to tag="span">{{item.title}}</router-link>
-        </li>
+        <span v-for="(item, index) in allNavData" :key="index" @mouseenter="showNav(item.child)">
+          <router-link class="top-nav-item" :to="{name:item.pagename}" tag="li">{{item.title}}</router-link>
+        </span>
       </ul>
     </div>
     <div class="second-menu" v-show="isShowNav" @mouseleave="hideNav">
-        <div class="second-menu-inner">
-          <div v-for="(item, index) in secNavList" :key="index">{{item}}</div>
-        </div>
+      <div class="second-menu-inner">
+        <ul style="list-style:normal inside">
+          <li v-for="(item, index) in secNavList" :key="index" class="sec-nav-item">{{item.title}}</li>
+        </ul>
       </div>
+    </div>
   </div>
   <!-- ???问题 -->
 </template>
@@ -22,44 +24,49 @@ export default {
   data() {
     return {
       isShowNav: false,
-      allNavData:[
+      allNavData: [
         {
-          title:"首页",
-          child:[]
+          title: "首页",
+          pagename: "pubHome",
+          child: []
         },
         {
           title: "医院介绍",
-          child:[
-            {title:'医院概况',name:'hospIntro'},
-           {title:'领导介绍',name:'leaderIntro'},
-            ]
+          pagename: "hosIntro",
+          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
+        },
+        {
+          title: "医疗团队",
+          pagename: "onlineHos",
+          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
+        },
+         {
+          title: "就医指南",
+          pagename: "onlineHos",
+          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
         },
           {
-          title: "智慧医院",
-          child:['医院概况',"领导界面"]
+          title: "新闻中心",
+          pagename: "onlineHos",
+          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
         },
-         {
-          title: "医院介绍",
-          child:['医院概况',"领导界面"]
-        },
-         {
-          title: "医院介绍",
-          child:['医院概况',"领导界面"]
-        },
+        {
+          title: "党建工作",
+          pagename: "onlineHos",
+          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
+        }
       ],
-      secNavList:[]
+      secNavList: []
     };
   },
   methods: {
-    showNav(child) {   
-        console.log(child)
-      this.secNavList = child
-      if(this.secNavList.length>0){
-        this.isShowNav=true;
+    showNav(child) {
+      this.secNavList = child;
+      if (this.secNavList.length > 0) {
+        this.isShowNav = true;
       } else {
         this.isShowNav = false;
       }
-      
     },
     hideNav() {
       this.isShowNav = false;
@@ -74,6 +81,9 @@ export default {
   min-width: 1000px;
   background: #2ebfe1;
   position: relative;
+  .link-active {
+    border-bottom: 4px solid #ffffff;
+  }
   .top-nav {
     width: 1000px;
     min-width: 1000px;
@@ -88,11 +98,11 @@ export default {
     position: relative;
     // height: 34px;
     top: 25px;
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff;
     text-align: center;
     cursor: pointer;
-    width: 8%;
+    width: 10%;
     padding: 0 10px 15px;
     margin-right: 10px;
   }
@@ -106,14 +116,28 @@ export default {
     width: 100%;
     min-width: 1000px;
     top: 60px;
-    padding: 30px 0;
+    padding: 20px 0;
     background: rgba(255, 255, 255, 1);
     border-radius: 2px 0px 0px 0px;
     color: #221815;
   }
   .second-menu-inner {
     width: 1000px;
-    margin: 0 auto
+    margin: 0 auto;
+    position: relative;
+  }
+  .sec-nav-item {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    margin-left: 30px;
+    padding-left: 20px;
+    background: url(~images/pic_link_arrow_black.png) left center no-repeat;
+    cursor: pointer;
+  }
+  .sec-nav-item:hover {
+    text-decoration: underline;
+    text-decoration-color: #999;
   }
 }
 </style>

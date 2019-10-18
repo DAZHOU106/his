@@ -47,12 +47,7 @@
     float: left;
     width: 78%;
   }
-  .line {
-    width: 6px;
-    background: #ffbd27;
-    height: 30px;
-    float: left;
-  }
+ 
   .title {
     line-height: 30px;
     margin-left: 20px;
@@ -62,6 +57,7 @@
   }
   .el-row {
     margin-top: 40px;
+    cursor: pointer;
     .guid-btn {
       float: left;
       background-color: #2ebfe1;

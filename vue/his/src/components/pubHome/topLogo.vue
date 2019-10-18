@@ -6,16 +6,28 @@
         <img src="@/assets/logo2.png" alt class="logo-sm" />
       </div>
       <div class="login-register">
-        <span href="javascript:;" class="login">登陆</span>
+        <span href="javascript:;" class="login" @click="show">登陆</span>
         <span>|</span>
         <span href="javascript:;" class="register">注册</span>
       </div>
     </div>
+    <login-register></login-register>
   </div>
 </template>
 
 <script>
-export default {};
+import LoginRegister from "../loginRegistDia.vue" 
+export default {
+  name:'',
+  data(){
+    return{
+
+    }
+  },
+  components:{
+    LoginRegister
+  }
+};
 </script>
 
 <style lang="scss" scoped>
