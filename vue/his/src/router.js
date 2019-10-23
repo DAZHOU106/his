@@ -31,19 +31,7 @@ export default new Router({
           name: "hosPreview",
           props: true,
           component: () => import("./pages/publicPage/hosIntro/hosPreview.vue")
-        },
-        {
-          path: "/hosIntro/hosCulture",   
-          name: "hosCulture",
-          props: true,
-          component: () => import("./pages/publicPage/hosIntro/hosCulture.vue")
-        },
-        {
-          path: "/hosIntro/hosEquip",   
-          name: "hosEquip",
-          props: true,
-          component: () => import("./pages/publicPage/hosIntro/hosEquip.vue")
-        },
+        },  
         {
           path: "/hosIntro/hosIdentity",   
           name: "hosIdentity",
@@ -60,31 +48,111 @@ export default new Router({
           path: "/hosIntro/leaderIntro",   
           name: "leaderIntro",
           props: true,
-          component: () => import("./pages/publicPage/hosIntro/leaderIntro.vue")
+          component: () => import("./pages/publicPage/hosIntro/leaderIntro.vue"),
+      
         },
+        {
+          path: "leaderDetail",
+          name: "leaderDetail",
+          props: true,
+          component: () => import("./pages/publicPage/hosIntro/leaderDetail")
+        },
+      ]
+      
+    },
+    
+    {
+      path: "/docTeam",
+      name: "docTeam",
+      props: true,
+      redirect: {name:"teamPreview"},
+      component: () => import("./pages/publicPage/docTeam/docTeam.vue"),
+      children:[
+        {
+          path: "/docTeam/teamPreview",
+          name: "teamPreview",
+          props: true,
+          component: () => import("./pages/publicPage/docTeam/teamPreview.vue"),
+        }
       ]
     },
 
     {
-      path: "/onlineHos",
-      name: "onlineHos",
-      props: true,
-      component: () => import("./pages/publicPage/onlineHos/onlineHos.vue"),
+      path:"/patiGuide",
+      name:"patiGuide",
+      props:true,
+      // redirect:{name:"outpatient"},
+      component: () => import("./pages/publicPage/patiGuide/patiGuide.vue"),
+      children:[
+        {
+          path: "/patiGuide/outpatient",
+          name:"outpatient",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/outpatient.vue")
+        },
+        {
+          path: "/patiGuide/emergency",
+          name:"emergency",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/emergency.vue")
+        },
+        {
+          path: "/patiGuide/Hospitalization",
+          name:"Hospitalization",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/Hospitalization.vue")
+        },
+        {
+          path: "/patiGuide/reservation",
+          name:"reservation",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/reservation.vue")
+        },
+        {
+          path: "/patiGuide/insurance",
+          name:"insurance",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/insurance.vue")
+        },
+        {
+          path: "/patiGuide/clinic",
+          name:"clinic",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/clinic.vue")
+        },
+        {
+          path: "/patiGuide/map",
+          name:"map",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/map.vue")
+        },
+        {
+          path: "/patiGuide/park",
+          name:"park",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/park.vue")
+        },
+        {
+          path: "/patiGuide/tel",
+          name:"tel",
+          props:true,
+          components: () => import("./pages/publicPage/patiGuide/tel.vue")
+        },
+       
+      ]
     },
-    // {
-    //   path: "/onlineHos",
-    //   name: 'onlineHos',
-    //   props:true,
-    //   component: () => import('./pages/publicPage/onlineHos.vue'),
-    // }
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component:
-    //   () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    // }
+
+    {
+      path:"/newsCenter",
+      name: "newsCenter",
+      props: true,
+      component: () => import("./pages/publicPage/newsCenter/newsCenter.vue"),
+    },
+    {
+      path:"/constrWork",
+      name: "constrWork",
+      props: true,
+      component: () => import("./pages/publicPage/constrWork/constrWork.vue"),
+    },
   ]
 });

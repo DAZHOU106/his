@@ -29,7 +29,10 @@
   .intro-title {
     padding-bottom: 20px;
   }
-  
+ 
+ 
+ 
+
   // 以上主页公共部分
 
   .swiper-con {
@@ -47,7 +50,7 @@
     float: left;
     width: 78%;
   }
- 
+
   .title {
     line-height: 30px;
     margin-left: 20px;
@@ -55,7 +58,7 @@
     color: #333333;
     float: left;
   }
-  .el-row {
+  .guid-btn-container {
     margin-top: 40px;
     cursor: pointer;
     .guid-btn {
@@ -68,6 +71,14 @@
       text-align: center;
       line-height: 20px;
       cursor: pointer;
+    }
+    .el-col {
+      width: 33%;
+      float: left;
+      margin-top: 39px;
+    }
+    .el-col:nth-child(-n + 3) {
+      margin-top: 0;
     }
     .guid-btn:hover {
       background-color: #ffbd27;
@@ -155,10 +166,15 @@
     margin-top: 20px;
     .doc-info {
       background-color: $theme-light-grey;
+      border-bottom: 3px solid $theme-blue;
+      transition: box-shadow .2s ease;
+    }
+    .doc-info:hover {
+      box-shadow: 0 0 5px 5px #ededed;
     }
 
     .doc-avatar {
-        cursor: pointer;
+      cursor: pointer;
     }
     .avatar-img {
       width: 100%;
@@ -186,6 +202,9 @@
       background-color: #fff;
       padding: 25px 10px;
       cursor: pointer;
+    }
+    .depart-info:hover {
+      box-shadow: 0 0 5px 5px #ededed;
     }
     .depart-logo {
       float: left;
@@ -220,7 +239,7 @@
       color: #999;
       font-size: 12px;
       padding-top: 5px;
-      line-height: 15px;;
+      line-height: 15px;
       height: 51px;
       overflow: hidden;
     }
@@ -247,7 +266,7 @@
       float: left;
       margin-left: 25px;
     }
-    
+
     .news-item {
       font-size: 12px;
       color: #999;

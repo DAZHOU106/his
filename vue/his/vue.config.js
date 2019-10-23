@@ -11,6 +11,14 @@ module.exports = {
    chainWebpack: config=> {
       config.resolve.alias
       .set('images',resolve('src/assets/images'))
+   },
+   css:{
+    loaderOptions:{
+      sass:{
+        prependData:`@import "~@/styles/variable.scss";`
+      }
+    
+    }
    }
     // devServer: {
         

@@ -373,26 +373,120 @@
     height:30px;
     float: left;
 }
+  //块主题
+  .title {
+    line-height: 30px;
+    margin-left: 20px;
+    font-size: 18px;
+    color: #333333;
+    float: left;
+  }
+  // 左浮动
+ .fl {
+   float: left;
+ }
+//  右浮动
+ .fr {
+   float:right;
+ }
 
-.side-bar-wrapper {
-  position: sticky;
-  top: 20px;
-  width: 200px;
-  float: left;
-  .side-nav-bar {
-    background: $theme-grey;
-  }
-  .side-nav-item {
-    color: #ffffff;
-    padding: 15px;
-    text-align: center;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .side-nav-item:hover {
-    color: #ffffff;
-    background: $theme-blue;
-  }
+//  门户二级页面布局
+ .intro-main-con {
+  width: 1000px;
+  margin: 40px auto 0;
 }
+.intro-con-right {
+  float: left;
+  margin-left: 25px;
+  width: calc(100% - 175px);
+}
+    //公共门户页登录弹窗样式
+    .login-register-dia{ 
+      .el-dialog__header{
+        display: none;
+      }
+     .el-dialog__body {
+       position: relative;
+          overflow: hidden;
+       border: 5px solid;
+       border-image: linear-gradient(
+           -49deg,
+           rgba(255, 0, 255, 1),
+           rgba(255, 0, 255, 1),
+           rgba(255, 0, 0, 1),
+           rgba(255, 0, 0, 1),
+           rgba(0, 0, 255, 1),
+           rgba(0, 0, 255, 1),
+           rgba(0, 255, 255, 1),
+           rgba(0, 255, 255, 1),
+           rgba(0, 255, 0, 1),
+           rgba(0, 255, 0, 1),
+           rgba(255, 255, 0, 1),
+           rgba(255, 255, 0, 1),
+           rgba(255, 0, 0, 1),
+           rgba(255, 0, 0, 1)
+         )
+         5 5;
+       
+     }
+   
+     
+     .varify-con {
+       position: relative;
+     }
+     .varify-code {
+       position: absolute;
+       background: $theme-blue;
+       right:0;
+       border-radius: 0 4px 4px 0;
+     }
+     .btn-login,.btn-register{
+       width: 200px;
+       display: block;
+       margin: 20px auto;
+     }
+      .iconfork {
+        position: absolute;
+        top: 10px;
+        right:10px;
+        cursor: pointer;
+      }
+     .logig-register{
+       .login-register-switch{ 
+         margin: 0 auto;
+         border-bottom: 1px solid #ededed;
+       
+       .switch-con{
+         width:200px;
+         margin: 0 auto;
+         padding: 10px 10px 10px 15px;
+       }
+     }
+       .login-switcher,.register-switcher{
+         font-size: 18px;
+         color:#333; 
+         margin: 0 15px;
+         padding: 8px 10px;
+         cursor: pointer;
+       }
+       .choosed {
+         color: $theme-blue;
+         border-bottom: 3px solid $theme-blue;
+       }
+       .login-form{
+         margin: 20px 0;
+         
+       }
+       .register-form{
+         margin: 20px 0;
+         
+       }     
+       
+     }
+    
+   }
+
+
+
 
 

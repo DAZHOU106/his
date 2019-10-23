@@ -24,4 +24,28 @@ export default {
 </script>
 
 <style lang="scss">
+.side-bar-wrapper {
+  position: sticky;
+  top: 20px;
+  width: 150px;
+  float: left;
+  .link-active {
+    background: $theme-blue;
+  }
+  .side-nav-bar {
+    background: $theme-grey;
+  }
+  .side-nav-item {
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .side-nav-item:hover {
+    color: #ffffff;
+    background: $theme-blue;
+  }
+}
+
 </style>

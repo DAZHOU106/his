@@ -2,7 +2,10 @@
 @import './variable.scss';
 // 重置浏览器样式和全局公共样式
 @import './normalize.scss';
-
+// 动画效果
+@import './animate.css';
 //页面样式
 @import './publicPage/publicPage.scss';
 @import './publicPage/hosIntro.scss';
+@import './publicPage/docTeam.scss';
+@import './publicPage/patiGuide.scss'

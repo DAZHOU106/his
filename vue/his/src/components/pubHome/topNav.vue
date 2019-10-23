@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav-con" @mouseleave="hideNav">
     <div class="top-nav">
-      <ul class="clearfix">
+      <ul class="clearfix ">
         <span v-for="(item, index) in allNavData" :key="index" @mouseenter="showNav(item.child)">
           <router-link class="top-nav-item" :to="{name:item.pagename}" tag="li">{{item.title}}</router-link>
         </span>
@@ -9,8 +9,12 @@
     </div>
     <div class="second-menu" v-show="isShowNav" @mouseleave="hideNav">
       <div class="second-menu-inner">
-        <ul style="list-style:normal inside">
-          <li v-for="(item, index) in secNavList" :key="index" class="sec-nav-item">{{item.title}}</li>
+        <ul class="nav-item-con clearfix" style="list-style:normal inside">
+          <li v-for="(item, index) in secNavList" :key="index" class="sec-nav-item">
+            <router-link :to="{name:item.pagename}" tag="span">
+            {{item.title}}
+            </router-link>
+            </li>
         </ul>
       </div>
     </div>
@@ -33,27 +37,43 @@ export default {
         {
           title: "医院介绍",
           pagename: "hosIntro",
-          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
+          child: [
+            { title: "医院概况", pagename: "hosPreview" },
+            { title: "领导介绍", pagename: "leaderIntro" },
+            { title: "职业登记", pagename: "hosIdentity" },
+            { title: "医院规章", pagename: "hosRules" }
+          ]
         },
         {
           title: "医疗团队",
-          pagename: "onlineHos",
-          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
-        },
-         {
-          title: "就医指南",
-          pagename: "onlineHos",
-          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
-        },
-          {
-          title: "新闻中心",
-          pagename: "onlineHos",
-          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
+          pagename: "docTeam",
+          child: [{ title: "团队概括", pagename: "teamPreview" }]
         },
         {
+          title:"就诊指南",
+          pagename:"patiGuide",
+          child:[
+            { title: "门诊指南", pagename: "outpatient" },
+            { title: "急诊指南", pagename: "emergency" },
+            { title: "住院指南", pagename: "Hospitalization" },
+            { title: "预约挂号", pagename: "reservation" },
+            { title: "医保政策", pagename: "insurance" },
+            { title: "诊室分布", pagename: "clinic" },
+            { title: "医院地图", pagename: "map" },
+            { title: "泊车指南", pagename: "park" },
+            { title: "服务电话", pagename: "tel" },
+            ]
+        },
+        {
+          title: "新闻中心",
+          pagename: "newsCenter",
+          child: [{ title: "新闻中心", pagename: "newsCenter" }]
+        },
+      
+        {
           title: "党建工作",
-          pagename: "onlineHos",
-          child: [{ title: "领导介绍", pagename: "leaderIntro" }]
+          pagename: "constrWork",
+          child: [{ title: "党建工作", pagename: "constrWork" }]
         }
       ],
       secNavList: []
@@ -82,7 +102,7 @@ export default {
   background: #2ebfe1;
   position: relative;
   .link-active {
-    border-bottom: 4px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
   }
   .top-nav {
     width: 1000px;
@@ -115,16 +135,24 @@ export default {
     z-index: 2000;
     width: 100%;
     min-width: 1000px;
+    height: 220px;
     top: 60px;
     padding: 20px 0;
     background: rgba(255, 255, 255, 1);
     border-radius: 2px 0px 0px 0px;
     color: #221815;
+    .link-active {
+      background: #ffffff;
+      color:$theme-blue;
+    }
   }
   .second-menu-inner {
     width: 1000px;
     margin: 0 auto;
     position: relative;
+  }
+  .nav-item-con {
+    width:450px;
   }
   .sec-nav-item {
     margin-top: 10px;
@@ -134,6 +162,9 @@ export default {
     padding-left: 20px;
     background: url(~images/pic_link_arrow_black.png) left center no-repeat;
     cursor: pointer;
+    width:150px;
+    margin-top:20px;
+    float: left;
   }
   .sec-nav-item:hover {
     text-decoration: underline;

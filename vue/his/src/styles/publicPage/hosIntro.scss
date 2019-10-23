@@ -7,34 +7,151 @@
   .link-active {
     background: $theme-blue;
   }
-  .intro-main-con {
-    width: 1000px;
-    margin: 40px auto 0;
+ 
+  .preview-title {
+    width: 100%;
+    .title {
+      line-height: 30px;
+      margin-left: 20px;
+      font-size: 18px;
+      padding-bottom: 30px;
+    }
   }
-  .intro-con-right {
-      float: left;
-      margin-left:25px;
-      width: calc(100% - 225px)
+  .hos-img {
+    width: 700px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
   }
- .preview-title {
-     width:100%;
-     .title {
-         line-height: 30px;
-         margin-left: 20px;
-         font-size: 18px;
-         padding-bottom: 30px;
-     }
- }
- .hos-img {
-     width: 700px;
-     margin: 0 auto;
-     img{
-         width:100%;
-     }
- }
- .pre-intro-article {
-    color:#333;
+  .pre-intro-article {
+    color: #333;
     font-size: 16px;
     line-height: 1.2;
- }
+  }
+  .leader-intro-card {
+    height: 380px;
+    width: 250px;
+    margin-top: 30px;
+    margin-right: 20px;
+    float: left;
+    border: 2px solid $theme-light-grey;
+    cursor: pointer;
+    .leader-avatar {
+      height: 230px;
+      width: 200px;
+      margin: 15px auto 0;
+      padding: 5px;
+      border: 1px solid $theme-light-grey;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .leader-name {
+      width: 100px;
+      text-align: center;
+      padding-bottom: 5px;
+      border-bottom: 3px solid $theme-yellow;
+      margin: 5px auto;
+    }
+    .leader-detail {
+      color: #333;
+      font-size: 14px;
+      padding: 0 5px 10px;
+    }
+  }
+  .cetificate {
+    margin-top: 20px;
+  }
+  //  规章制度
+  .rules-wrapper {
+    .rules-item {
+      margin-top: 20px;
+      height: 110px;
+      border: 1px solid #ededed;
+      cursor: pointer;
+      transition: box-shadow 0.1s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .rules-item:hover {
+      box-shadow: 0 0 5px 5px $theme-light-grey;
+    }
+    .pub-time {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: $theme-blue;
+      text-align: center;
+      color: #ffffff;
+      margin: 15px 20px 0 20px;
+    }
+    .date {
+      margin-top: 10px;
+    }
+    .year {
+      font-weight: bold;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+    .check-now {
+      width: 200px;
+      height: 100%;
+      background: $theme-yellow;
+      text-align: center;
+      line-height: 110px;
+      position: absolute;
+      right: 0;
+      transform: translateX(100%);
+      transition: transform 0.2s ease;
+    }
+    .rules-item:hover .check-now {
+      transform: translateX(0);
+    }
+    .pub-content {
+      height: 90px;
+      width: calc(100% - 150px);
+      margin: 10px 0;
+    }
+    .rule-detail {
+      color: #999;
+      font-size: 14px;
+      margin-top: 6px;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+  // 领导详情
+  .ld-detail-wrapper{
+    .ld-avatar {
+      margin: 20px;
+      height: 250px;
+      width: 200px;
+      float:left;
+    }
+    .avatar-img {
+      height:100%;
+      width:100%;
+    }
+    .ld-detail {
+      float: left;
+      width: calc(100% - 300px);
+      margin: 20px 0;
+    }
+    .info-item{
+      margin-top: 20px;
+      line-height: 1.3;
+      span{
+        margin-left:30px;
+      }
+    }
+    .info-item:first-child{
+      margin-top:0
+    }
+  }
 }

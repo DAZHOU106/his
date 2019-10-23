@@ -7,8 +7,7 @@
          <side-bar :navList="navList"></side-bar>
          <div class="intro-con-right">
               <router-view></router-view>
-         </div>
-        
+         </div>      
      </div>
     
   </div>
@@ -32,8 +31,6 @@ export default {
           {title:"领导介绍",pagename:"leaderIntro"},
           {title:"职业登记",pagename:"hosIdentity"},
           {title:"医院规章",pagename:"hosRules"},
-          {title:"高新设备",pagename:"hosEquip"},
-          {title:"医院文化",pagename:"hosCulture"},      
           ]
     };
   }

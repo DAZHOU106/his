@@ -26,8 +26,11 @@
             <div class="line"></div>
             <span class="title">就诊指南</span>
           </div>
-          <el-row>
-            <el-col :span="8" v-for="(item, index) in line1" :key="index">
+          <div class="guid-btn-container">
+            <div class="el-col clearfix"  
+            v-for="(item, index) in line1" 
+            :key="index"
+            @click="jumpTo(item.pagename)">
               <div class="guid-btn">
                 <img :src="item.img" alt />
               </div>
@@ -35,30 +38,8 @@
                 <div class="info-name">{{item.name}}</div>
                 <div class="info-detail">{{item.detail}}</div>
               </div>
-            </el-col>
-          </el-row>
-          <el-row>
-            <el-col :span="8" v-for="(item, index) in line2" :key="index">
-              <div class="guid-btn">
-                <img :src="item.img" alt />
-              </div>
-              <div class="info">
-                <div class="info-name">{{item.name}}</div>
-                <div class="info-detail">{{item.detail}}</div>
-              </div>
-            </el-col>
-          </el-row>
-          <el-row>
-            <el-col :span="8" v-for="(item, index) in line3" :key="index">
-              <div class="guid-btn">
-                <img :src="item.img" alt />
-              </div>
-              <div class="info">
-                <div class="info-name">{{item.name}}</div>
-                <div class="info-detail">{{item.detail}}</div>
-              </div>
-            </el-col>
-          </el-row>
+            </div>
+          </div>
         </div>
         <div class="pati-service">
           <div class="service-title clearfix">
@@ -66,9 +47,25 @@
             <span class="title">医患服务</span>
           </div>
           <div class="btn-group">
-            <div class="btn-service" v-for="(item, index) in btnGroup" :key="index">
-              <img :src="item.img" />
-              <div class="service-name">{{item.name}}</div>
+            <div class="btn-service" @click="showLogin">
+              <img src="@/assets/images/ic_home_internet.png" />
+              <div class="service-name">登录/注册</div>
+            </div>
+             <div class="btn-service" >
+              <img src="@/assets/images/ic_home_register.png" />
+              <div class="service-name">预约挂号</div>
+            </div>
+             <div class="btn-service" >
+              <img src="@/assets/images/ic_home_inquire.png" />
+              <div class="service-name">化验单查询</div>
+            </div>
+             <div class="btn-service" >
+              <img src="@/assets/images/ic_home_advisory.png" />
+              <div class="service-name">互动交流</div>
+            </div>
+             <div class="btn-service" >
+              <img src="@/assets/images/ic_home_survey.png" />
+              <div class="service-name">满意度调查</div>
             </div>
           </div>
         </div>
@@ -135,7 +132,7 @@
             </div>
           </div>
         </div>
-        <swiper :options="docOption" style="padding-bottom:10px;">
+        <swiper :options="docOption" style="padding:5px">
           <swiper-slide v-for="(item,index) in 10" :key="index">
             <div class="doc-info">
               <div class="doc-avatar">
@@ -173,7 +170,7 @@
             </div>
           </div>
         </div>
-        <swiper :options="departOption">
+        <swiper :options="departOption"  style="padding:5px">
           <swiper-slide v-for="(item,index) in 10" :key="index">
             <div class="depart-info clearfix">
               <div class="depart-logo">
@@ -194,8 +191,8 @@
     </div>
     <!-- 新闻和通知 -->
     <div class="news-notice pub-home-layout">
-      <div class="layout-inner  clearfix">
-        <div class="news-con  clearfix">
+      <div class="layout-inner clearfix">
+        <div class="news-con clearfix">
           <div class="news-title clearfix">
             <div class="line"></div>
             <div class="title">资讯中心</div>
@@ -217,29 +214,82 @@
             </div>
           </div>
         </div>
-        <div class="notice-con  clearfix" style="margin-left:20px;">
+        <div class="notice-con clearfix" style="margin-left:20px;">
           <div class="notice-title clearfix">
             <div class="line"></div>
             <div class="title">通知中心</div>
           </div>
           <div class="news-left">
-              <div class="news-item" v-for="(item, index) in 8" :key="index">
-                <img src="@/assets/images/ic_home_news.png" alt="" class="icon-news">
-                <span class="content">123</span>
-                 <span class="time">123</span>
-              </div>
+            <div class="news-item" v-for="(item, index) in 8" :key="index">
+              <img src="@/assets/images/ic_home_news.png" alt class="icon-news" />
+              <span class="content">123</span>
+              <span class="time">123</span>
             </div>
+          </div>
         </div>
       </div>
     </div>
-    <pub-footer/>
+    <pub-footer />
+      <!-- 登录注册弹窗 -->
+    <el-dialog
+      title="登录/注册"
+      class="login-register-dia"
+      :visible.sync="isShowLogin"
+      :width="diaWidth"
+    >
+     <i class="iconfont iconfork" @click="closeDia"></i>
+      <div class="logig-register">
+        <div class="login-register-switch">
+          <div class="switch-con">
+            <span class="login-switcher" :class="formType==1 ? 'choosed':''" @click="switchForm(1)">登录</span>
+            <span class="register-switcher" :class="formType==2 ? 'choosed':''" @click="switchForm(2)">注册</span>
+          </div>
+        </div>
+        <!-- 登录表单 -->
+        <el-form :model="form" class="login-form animated fadeInLeft" v-if="formType==1">
+          <el-form-item label="用户名" :label-width="formLabelWidth">
+            <el-input v-model="form.name" autocomplete="off"></el-input>
+          </el-form-item>
+          <el-form-item label="密码" :label-width="formLabelWidth">
+            <el-input v-model="form.password" autocomplete="off"></el-input>
+          </el-form-item>
+          <div class="button-con">
+             <el-button type="primary" class="btn-login">登录</el-button>       
+          </div>
+         
+
+        </el-form>
+        <!-- 注册表单 -->
+         <el-form :model="form2" class="register-form animated fadeInRight" v-if="formType==2">
+          <el-form-item label="请输入用户名" :label-width="formLabelWidth">
+            <el-input v-model="form2.name" autocomplete="off"></el-input>
+          </el-form-item>
+          <el-form-item label="请输入密码" :label-width="formLabelWidth">
+            <el-input v-model="form2.password" autocomplete="off"></el-input>
+          </el-form-item>
+           <el-form-item label="请再次输入密码" :label-width="formLabelWidth">
+            <el-input v-model="form2.password" autocomplete="off"></el-input>
+          </el-form-item>
+            <el-form-item label="请输入验证码" :label-width="formLabelWidth" class="verify-con">
+            <el-input v-model="form2.password" autocomplete="off"></el-input>
+            <span class="varify-code">A S D Y</span>
+          </el-form-item>
+            <div class="button-con">
+             <el-button type="primary" class="btn-register">注册</el-button>       
+          </div>
+        </el-form>
+     
+      </div>
+       
+    
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import TopLogo from "@/components/pubHome/topLogo";
 import TopNav from "@/components/pubHome/topNav";
-import PubFooter from "@/components/pubHome/pubFooter"
+import PubFooter from "@/components/pubHome/pubFooter";
 export default {
   name: "pubHome",
   components: {
@@ -249,81 +299,77 @@ export default {
   },
   data() {
     return {
+      isShowLogin:false,
+      formType:1, //1登录，2注册
+      formLabelWidth: "120px",
+      diaWidth:"600px",
+        form: {
+        name: "",
+        password: "", 
+      },
+      form2:{
+         name: "",
+        password: "",      
+      },
       imgList: [
         require("@/assets/images/anhuiyiyuan.jpg"),
         require("@/assets/images/banner_z.png"),
         require("@/assets/images/70year.jpg")
       ],
-      btnGroup: [
-        {
-          name: "登录/注册",
-          img: require("images/ic_home_internet.png")
-        },
-        {
-          name: "预约挂号",
-          img: require("images/ic_home_register.png")
-        },
-        {
-          name: "化验单查询",
-          img: require("images/ic_home_inquire.png")
-        },
-        {
-          name: "互动交流",
-          img: require("images/ic_home_advisory.png")
-        },
-        {
-          name: "满意度调查",
-          img: require("images/ic_home_survey.png")
-        }
-      ],
+    
       line1: [
         {
           name: "门诊指南",
           detail: "医院门诊挂号示意图等信息",
+          pagename:"hosPreview",
           img: require("images/ic_home_outpatient.png")
         },
         {
           name: "急诊指南",
           detail: "急诊流程，急诊就诊范围",
+           pagename:"leaderIntro",
           img: require("images/ic_home_emergency.png")
         },
         {
           name: "住院指南",
           detail: "住院须知、住院流程等信息",
+          pagename:"hosPreview",
           img: require("images/ic_home_hospitalization.png")
-        }
-      ],
-      line2: [
+        },
         {
           name: "预约挂号",
           detail: "预约挂号须知说明",
+          pagename:"hosPreview",
           img: require("images/ic_home_reservation.png")
         },
         {
           name: "医保政策",
           detail: "医保卡办理说明，报销须知等",
+          pagename:"hosPreview",
           img: require("images/ic_home_insurance.png")
         },
         {
           name: "诊室分布",
           detail: "医院诊室分布图文介绍",
+          pagename:"hosPreview",
           img: require("images/ic_home_clinic.png")
-        }
-      ],
-      line3: [
-        {
+        },
+         {
           name: "医院地图",
           detail: "医院地图位置，周边建筑",
+          pagename:"hosPreview",
           img: require("images/ic_home_map.png")
         },
         {
           name: "泊车指南",
           detail: "周围停车场位置",
+          pagename:"hosPreview",
           img: require("images/ic_home_parking.png")
         },
         {
           name: "服务电话",
           detail: "医院常用联系电话头数方式",
+          pagename:"hosPreview",
           img: require("images/ic_home_tel.png")
         }
       ],
@@ -370,6 +416,19 @@ export default {
       }
     };
   },
-  methods: {}
+  methods: {
+    jumpTo(pagename){
+      this.$router.push({name:pagename})
+    },
+     showLogin() {
+      this.isShowLogin = true;
+    },
+    switchForm(type){
+      this.formType = type
+    },
+    closeDia() {
+      this.isShowLogin = false
+    }
+  }
 };
 </script>
