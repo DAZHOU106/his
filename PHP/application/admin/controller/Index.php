@@ -1,9 +1,14 @@
 <?php
-namespace app\admin\index;
+namespace app\admin\controller;
 
-class index {
+class Index {
     function index (){
         header("Access-Control-Allow-Origin:*");
         return 1;
     }
+    function add(){
+
+    dump( getAllUsers());
+}
+
 }

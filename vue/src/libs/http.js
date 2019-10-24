@@ -82,40 +82,8 @@ export const http = (function http() {
   // 处理接收服务器数据
   instance.interceptors.response.use(
     response => {
-      //判断返回是否有权限
-      //  if(response.data.code == "-403"){
-      //   Message({
-      //     showClose: true,
-      //     message:'无权限请重新登录',
-      //     type: 'error'
-      //   });
-      // //跳转到登录页面
-      //   router.replace({
-      //     path: '/login',
-      //   })
-      //  }
-      // 结束进度条
-      //   if (--loadingCount <= 0) {
-      //     // loadingbar.finish();
-      //   }
-
-      //   if (response.status < 200 || response.status >= 300) {
-      //     return Promise.reject(response.statusText);
-      //   }
-      // 服务器没有返回正确的JSON格式
-      //   if (typeof response.data === "string" && !response.data) {
-      //     Toast({
-      //       message: "服务器没有响应正确的数据, 请检查参数是否正确。",
-      //       duration: 1000
-      //     });
-      //     return Promise.reject(
-      //       new Error("服务器没有响应正确的数据, 请检查参数是否正确。")
-      //     );
-      //   }
-      // if (response.data && response.data.code < 0) {
-      //   return Promise.reject('您还没有登录, 为您跳转到登录页');
-      // }
-      return Promise.resolve(response);
+     
+      return Promise.resolve(response.data);
     },
     error => {
       // 关闭全屏进度条

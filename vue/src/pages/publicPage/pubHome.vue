@@ -246,15 +246,15 @@
           </div>
         </div>
         <!-- 登录表单 -->
-        <el-form :model="form" class="login-form animated fadeInLeft" v-if="formType==1">
+        <el-form :model="loginForm" class="login-form animated fadeInLeft" v-if="formType==1">
           <el-form-item label="用户名" :label-width="formLabelWidth">
-            <el-input v-model="form.name" autocomplete="off"></el-input>
+            <el-input v-model="loginForm.username"  autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="密码" :label-width="formLabelWidth">
-            <el-input v-model="form.password" autocomplete="off"></el-input>
+            <el-input v-model="loginForm.password" type="password" autocomplete="off"></el-input>
           </el-form-item>
           <div class="button-con">
-             <el-button type="primary" class="btn-login">登录</el-button>       
+             <el-button type="primary" class="btn-login" @click="userLogin">登录</el-button>       
           </div>
          
 
@@ -303,8 +303,8 @@ export default {
       formType:1, //1登录，2注册
       formLabelWidth: "120px",
       diaWidth:"600px",
-        form: {
-        name: "",
+        loginForm: {
+        username: "",
         password: "", 
       },
       form2:{
@@ -417,17 +417,30 @@ export default {
     };
   },
   methods: {
+
     jumpTo(pagename){
       this.$router.push({name:pagename})
     },
+    //展开登录弹窗
      showLogin() {
       this.isShowLogin = true;
     },
+    // 切换表单
     switchForm(type){
       this.formType = type
     },
     closeDia() {
       this.isShowLogin = false
+    },
+    // 用户登录
+    userLogin(){
+     
+      this.$http.post(
+        "http://localhost:8088/biyesheji/his/PHP/pubaction/index/login",
+        this.loginForm
+      ).then(res=>{
+        console.log(res)
+      })
     }
   }
 };
