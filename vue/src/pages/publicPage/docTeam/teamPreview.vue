@@ -5,9 +5,13 @@
             <div class="title">团队概况</div>
         </div>
         <div class="preview-detail">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel optio eius nisi voluptas. Perferendis saepe laboriosam quod laborum eaque ducimus asperiores sapiente nam e
-            xplicabo quaerat! Ut voluptatum necessitatibus corporis excepturi?
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, consectetur quas harum nobis eaque quis maxime. Asperiores molestias consequuntur inventore voluptatibus beatae eius, ipsa, vero dolorum eveniet totam unde optio.
+       我院目前共有57个临床科室，8个医技科室。共有医护人员2400余人<br/>
+
+心胸外科在省内率先开展心脏移植手术，目前已施行的心脏（包括心肾）移植手术居国内先进水平。先后开展肾移植、脐带血移植、骨髓移植、角膜移植等手术。微创外科在省内率先开展腹腔镜手术，目前已2万余例，治疗病种扩展至50多个，居省内领先水平。胃肠外科首创胃癌"三联序贯疗法"，大大提高胃癌生存率。泌尿外科开展的活体肾移植手术，居国内先进水平。骨科在省内率先开展关节镜，人工关节置换术、腰椎间盘镜治疗关节病和腰突症，取得良好疗效。神经外科治疗各种高难度脑肿瘤与动静脉畸形及微创切除脑瘤为同行所赞誉。消化内科开展的各种内镜诊断治疗居国内领先水平。心内科在省内率先运用国际上最先进的心脏电生理标测系统治疗房扑、房颤、顽固性室性早搏等复杂性心律失常，从而使我省治疗复杂性心律失常治疗水平跻入国内先进水平。<br/>
+
+望江山院区是省级老干部医疗保健基地，承担着老干部疗养、体检及后续治疗等工作，在心血管疾病、呼吸系统疾病、骨关节运动疾病、消化系统疾病、偏瘫康复的治疗上具有丰富的临床经验。在更好地满足老干部疗养和治疗的同时，为杭州西南部地区广大人民群众提供更好的医疗卫生服务。<br/>
+
+医院目前有特色学科：泌尿外科、肝胆胰外科、肾病科、血液科（骨髓移植）、神经内科（神经介入）、心内科、骨科（浙江省运动医学中心）、整形外科等。拥有3.0T超高场磁共振、320排640层螺旋CT、PET-CT、伽玛刀治疗仪、直线加速器、数字减影仪（DSA）、心脏电生理激动标测系统（Ensit3000）、彩色多普勒超声仪、准分子激光原位角膜镶仪（LASIK）、流式细胞仪、PCR定量仪等近百台先进诊治设备，并建立一流水平的浙江省器官移植重点研究实验室（心脏移植分室）、浙江省胃肠病学重点实验室、重症监护室（ICU）、中心实验室，为诊断疑难杂症、科研创新打下了坚实的基础。<br/>
         </div>
     </div>
 </template>

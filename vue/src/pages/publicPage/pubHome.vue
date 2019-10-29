@@ -47,23 +47,27 @@
             <span class="title">医患服务</span>
           </div>
           <div class="btn-group">
-            <div class="btn-service" @click="showLogin">
+            <div class="btn-service" @click="showLogin" v-if="!isLogin">
               <img src="@/assets/images/ic_home_internet.png" />
               <div class="service-name">登录/注册</div>
             </div>
-             <div class="btn-service" >
+             <div class="btn-service" @click="moveToPerson('personalCenter')" v-if="isLogin">
+              <i class="iconfont icongeren" style="float:left; width:35px;text-align: center; font-size:32px;line-height:38px"></i>
+              <div class="service-name">个人中心</div>
+            </div>
+             <div class="btn-service" @click="moveToReser('appointment')">
               <img src="@/assets/images/ic_home_register.png" />
               <div class="service-name">预约挂号</div>
             </div>
-             <div class="btn-service" >
+             <div class="btn-service" @click="moveToReport('myReport')" >
               <img src="@/assets/images/ic_home_inquire.png" />
               <div class="service-name">化验单查询</div>
             </div>
-             <div class="btn-service" >
+             <div class="btn-service" @click="moveToCommu('communicate')">
               <img src="@/assets/images/ic_home_advisory.png" />
               <div class="service-name">互动交流</div>
             </div>
-             <div class="btn-service" >
+             <div class="btn-service" @click="moveToSurvey('survey')">
               <img src="@/assets/images/ic_home_survey.png" />
               <div class="service-name">满意度调查</div>
             </div>
@@ -231,58 +235,7 @@
     </div>
     <pub-footer />
       <!-- 登录注册弹窗 -->
-    <el-dialog
-      title="登录/注册"
-      class="login-register-dia"
-      :visible.sync="isShowLogin"
-      :width="diaWidth"
-    >
-     <i class="iconfont iconfork" @click="closeDia"></i>
-      <div class="logig-register">
-        <div class="login-register-switch">
-          <div class="switch-con">
-            <span class="login-switcher" :class="formType==1 ? 'choosed':''" @click="switchForm(1)">登录</span>
-            <span class="register-switcher" :class="formType==2 ? 'choosed':''" @click="switchForm(2)">注册</span>
-          </div>
-        </div>
-        <!-- 登录表单 -->
-        <el-form :model="loginForm" class="login-form animated fadeInLeft" v-if="formType==1">
-          <el-form-item label="用户名" :label-width="formLabelWidth">
-            <el-input v-model="loginForm.username"  autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="密码" :label-width="formLabelWidth">
-            <el-input v-model="loginForm.password" type="password" autocomplete="off"></el-input>
-          </el-form-item>
-          <div class="button-con">
-             <el-button type="primary" class="btn-login" @click="userLogin">登录</el-button>       
-          </div>
-         
-
-        </el-form>
-        <!-- 注册表单 -->
-         <el-form :model="form2" class="register-form animated fadeInRight" v-if="formType==2">
-          <el-form-item label="请输入用户名" :label-width="formLabelWidth">
-            <el-input v-model="form2.name" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="请输入密码" :label-width="formLabelWidth">
-            <el-input v-model="form2.password" autocomplete="off"></el-input>
-          </el-form-item>
-           <el-form-item label="请再次输入密码" :label-width="formLabelWidth">
-            <el-input v-model="form2.password" autocomplete="off"></el-input>
-          </el-form-item>
-            <el-form-item label="请输入验证码" :label-width="formLabelWidth" class="verify-con">
-            <el-input v-model="form2.password" autocomplete="off"></el-input>
-            <span class="varify-code">A S D Y</span>
-          </el-form-item>
-            <div class="button-con">
-             <el-button type="primary" class="btn-register">注册</el-button>       
-          </div>
-        </el-form>
-     
-      </div>
-       
-    
-    </el-dialog>
+      <login-register :isShowLogin="isShowLogin" @closeDia="closeDia" />
   </div>
 </template>
 
@@ -290,86 +243,77 @@
 import TopLogo from "@/components/pubHome/topLogo";
 import TopNav from "@/components/pubHome/topNav";
 import PubFooter from "@/components/pubHome/pubFooter";
+import LoginRegister from "@/components/loginRegister/loginRegister";
 export default {
   name: "pubHome",
   components: {
     TopLogo,
     TopNav,
-    PubFooter
+    PubFooter,
+    LoginRegister
   },
   data() {
     return {
       isShowLogin:false,
-      formType:1, //1登录，2注册
-      formLabelWidth: "120px",
-      diaWidth:"600px",
-        loginForm: {
-        username: "",
-        password: "", 
-      },
-      form2:{
-         name: "",
-        password: "",      
-      },
-      imgList: [
+      imgList: [//轮播图图片
         require("@/assets/images/anhuiyiyuan.jpg"),
         require("@/assets/images/banner_z.png"),
         require("@/assets/images/70year.jpg")
       ],
     
-      line1: [
+      line1: [ //九宫格图片以及信息
         {
           name: "门诊指南",
           detail: "医院门诊挂号示意图等信息",
-          pagename:"hosPreview",
+          pagename:"outpatient",
           img: require("images/ic_home_outpatient.png")
         },
         {
           name: "急诊指南",
           detail: "急诊流程，急诊就诊范围",
-           pagename:"leaderIntro",
+           pagename:"emergency",
           img: require("images/ic_home_emergency.png")
         },
         {
           name: "住院指南",
           detail: "住院须知、住院流程等信息",
-          pagename:"hosPreview",
+          pagename:"Hospitalization",
           img: require("images/ic_home_hospitalization.png")
         },
         {
           name: "预约挂号",
           detail: "预约挂号须知说明",
-          pagename:"hosPreview",
+          pagename:"reservation",
           img: require("images/ic_home_reservation.png")
         },
         {
           name: "医保政策",
           detail: "医保卡办理说明，报销须知等",
-          pagename:"hosPreview",
+          pagename:"insurance",
           img: require("images/ic_home_insurance.png")
         },
         {
           name: "诊室分布",
           detail: "医院诊室分布图文介绍",
-          pagename:"hosPreview",
+          pagename:"clinic",
           img: require("images/ic_home_clinic.png")
         },
          {
           name: "医院地图",
           detail: "医院地图位置，周边建筑",
-          pagename:"hosPreview",
+          pagename:"map",
           img: require("images/ic_home_map.png")
         },
         {
           name: "泊车指南",
           detail: "周围停车场位置",
-          pagename:"hosPreview",
+          pagename:"park",
           img: require("images/ic_home_parking.png")
         },
         {
           name: "服务电话",
-          detail: "医院常用联系电话头数方式",
-          pagename:"hosPreview",
+          detail: "医院常用联系电话投诉方式",
+          pagename:"tel",
           img: require("images/ic_home_tel.png")
         }
       ],
@@ -416,6 +360,15 @@ export default {
       }
     };
   },
+  computed:{
+    isLogin(){
+      if(localStorage.getItem("userName")!=""||localStorage.getItem("userName")!=null){
+        return true
+      }else{
+        return false;
+      }
+    }
+  },
   methods: {
 
     jumpTo(pagename){
@@ -441,6 +394,9 @@ export default {
       ).then(res=>{
         console.log(res)
       })
+    },
+    moveToReser(pageName){
+      this.$router.push({name:pageName})
     }
   }
 };

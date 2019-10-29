@@ -80,6 +80,11 @@
     .el-col:nth-child(-n + 3) {
       margin-top: 0;
     }
+    .el-col:hover {
+      .guid-btn{
+        background: $theme-yellow;
+      }
+    }
     .guid-btn:hover {
       background-color: #ffbd27;
     }
@@ -131,6 +136,7 @@
       line-height: 35px;
     }
   }
+ 
   .special-point {
     margin-top: 20px;
   }

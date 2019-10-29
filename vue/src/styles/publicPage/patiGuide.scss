@@ -1,6 +1,77 @@
 .guide-wrapper {
-    .top-banner {
-        background: url(~images/pic_banner_guide.jpeg) center center no-repeat;
-        height:250px;
+  .top-banner {
+    background: url(~images/pic_banner_guide.jpeg) center center no-repeat;
+    height: 250px;
+    min-width: 1000px;
+  }
+
+  //详情页面
+  .detail-wrapper {
+    width: 100%;
+    min-width: 1000px;
+    margin-top: 20px;
+    .detail-wrapper-inner {
+      width: 1000px;
+      margin: 0 auto;
     }
+  }
+  .detail-title {
+    text-align: center;
+  }
+  .detail-title-name {
+    padding: 5px 10px;
+    display: inline-block;
+    border-bottom: 3px solid $theme-yellow;
+  }
+  .icon-fanhui {
+    color: $theme-yellow;
+    font-size: 18px;
+  }
+  .detail-main-con {
+    margin-top: 40px;
+  }
+  //急诊流程示意图页面
+  .emer-con {
+    width: 845px;
+    margin: 0 auto;
+  }
+  .hospi-content {
+    margin-top: 20px;
+  }
+  .link {
+    a {
+      text-decoration: underline;
+      color: #b8765e;
+    }
+  }
+  //地图页面
+  .map-view {
+    height: 500px;
+    width: 800px;
+    margin: 20px auto 30px;
+    .BMap_scaleCtrl {
+      left: 20px !important;
+    }
+    .BMap_cpyCtrl {
+      display: none;
+    }
+    
+    .control-back {
+      position: absolute;
+      position: absolute;
+      z-index: 10;
+      text-size-adjust: none;
+      bottom: 29px !important;
+      right: 60px !important;
+      top:auto !important;
+      left: auto !important;
+    }
+  }
+  .search-bar {
+      margin-top:20px;
+      margin-left:10px;
+  }
+  .el-table {
+      margin-top:20px;
+  }
 }

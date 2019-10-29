@@ -58,7 +58,6 @@ export default {
             { title: "住院指南", pagename: "Hospitalization" },
             { title: "预约挂号", pagename: "reservation" },
             { title: "医保政策", pagename: "insurance" },
-            { title: "诊室分布", pagename: "clinic" },
             { title: "医院地图", pagename: "map" },
             { title: "泊车指南", pagename: "park" },
             { title: "服务电话", pagename: "tel" },
@@ -166,6 +165,7 @@ export default {
     margin-top:20px;
     float: left;
   }
+ 
   .sec-nav-item:hover {
     text-decoration: underline;
     text-decoration-color: #999;

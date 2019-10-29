@@ -3,9 +3,9 @@
            <top-logo></top-logo>
     <top-nav></top-nav>
      <div class="top-banner"></div> 
-     <div class="intro-main-con">
+     <div class="intro-main-con clearfix">
        <side-bar :navList="navList"></side-bar>
-       <div class="intro-con-right">
+       <div class="intro-con-right clearfix">
          <router-view></router-view>
        </div>
      </div>
@@ -31,7 +31,6 @@ export default {
           {title:"住院指南",pagename:"Hospitalization"},
           {title:"预约挂号",pagename:"reservation"},
           {title:"医保政策",pagename:"insurance"},
-          {title:"诊室分布",pagename:"clinic"},
           {title:"医院地图",pagename:"map"},
           {title:"泊车指南",pagename:"park"},
           {title:"服务电话",pagename:"tel"},

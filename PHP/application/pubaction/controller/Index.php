@@ -25,7 +25,10 @@ class Index {
       }
        return json($result);
     }
-    public function
+    public function register() {
+
+    }
+
 //    用户注册
 //    参数 username ，password，
 }
