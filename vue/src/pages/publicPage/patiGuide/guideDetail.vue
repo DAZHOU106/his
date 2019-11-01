@@ -15,14 +15,21 @@
           <!-- 门诊页面 -->
           <div class="outpati-detail" v-if="type=='outpati'">
             <el-form :inline="true" class="demo-form-inline">
-              <el-form-item label="就诊日期">
-                <el-input placeholder="审批人"></el-input>
-              </el-form-item>
+            
+
               <el-form-item label="就诊时间">
-                <el-input placeholder="审批人"></el-input>
+                <el-date-picker v-model="outDate" type="date" placeholder="选择日期"></el-date-picker>
               </el-form-item>
               <el-form-item label="就诊科室">
                 <el-select placeholder="活动区域" value="shanghai">
+                  <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option>
+                  <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option>
+                  <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option>
+                  <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option>
                   <el-option label="区域一" value="shanghai"></el-option>
                   <el-option label="区域二" value="beijing"></el-option>
                 </el-select>
@@ -42,7 +49,7 @@
           <!-- 急诊功能页面 -->
           <div class="emer-detail" v-if="type=='emer'">
             <div class="emer-con">
-              <img  alt="" class="emer-img" src="@/assets/images/emer-process.jpg">
+              <img alt class="emer-img" src="@/assets/images/emer-process.jpg" />
             </div>
           </div>
         </div>
@@ -64,23 +71,29 @@ export default {
   },
   data() {
     return {
-         tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }]
+      outDate:'',//医生出诊时间
+      tableData: [
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-04",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1517 弄"
+        },
+        {
+          date: "2016-05-01",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1519 弄"
+        },
+        {
+          date: "2016-05-03",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1516 弄"
+        }
+      ]
     };
   },
 
@@ -88,8 +101,8 @@ export default {
     detailTitle() {
       if (this.type == "outpati") {
         return "医生出诊情况查询";
-      }else if(this.type == "emer"){
-        return "急诊流程示意图"
+      } else if (this.type == "emer") {
+        return "急诊流程示意图";
       }
     }
   },
@@ -106,3 +119,17 @@ export default {
   mounted() {}
 };
 </script>
+
+<style lang="scss">
+// .el-select-dropdown {
+//   min-width:600px !important;
+//   left: 600px !important;
+//   min-height: 200px;
+// }
+// .popper__arrow {
+//   left:277px !important;
+// }
+// .el-popper{
+
+// }
+</style>

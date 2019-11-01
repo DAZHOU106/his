@@ -1,7 +1,7 @@
 <template>
   <div class="pubHome-wrapper">
     <!-- 头部logo+登陆 -->
-    <top-logo />
+    <top-logo  @logOut="logOut"/>
     <!-- 中间导航栏 -->
     <top-nav />
     <!-- 轮播图 -->
@@ -317,7 +317,7 @@ export default {
           img: require("images/ic_home_tel.png")
         }
       ],
-
+      logout: false,
       bannerOption: {
         loop: true,
         // direction: "horizontal"
@@ -361,12 +361,18 @@ export default {
     };
   },
   computed:{
-    isLogin(){
-      if(localStorage.getItem("userName")!=""||localStorage.getItem("userName")!=null){
+    isLogin:{
+      get(){
+          if(localStorage.getItem("userName")!=""||localStorage.getItem("userName")!=null){
         return true
       }else{
         return false;
       }
+      },
+    set(val){
+      // console.log(val)
+      this.isLogin = val
+    }
     }
   },
   methods: {
@@ -394,6 +400,11 @@ export default {
       ).then(res=>{
         console.log(res)
       })
+    },
+    // 点击注销
+    logOut(){
+      console.log(this.isLogin)
+      localStorage.removeItem('username')
     },
     moveToReser(pageName){
       this.$router.push({name:pageName})

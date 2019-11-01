@@ -11,15 +11,14 @@
         <span href="javascript:;" class="register" @click="showLogin(2)">注册</span>
       </div>
       <div class="login-register welcome" v-if="isLogin">
-        <el-dropdown>
+        <el-dropdown  @command="handleCommand">
           <span class="el-dropdown-link">
             <span>欢迎您</span>
             <span>周医生</span><i class="el-icon-arrow-down el-icon--right"></i>
           </span>
-          <el-dropdown-menu slot="dropdown">
-           
+          <el-dropdown-menu slot="dropdown"> 
               <el-dropdown-item><router-link to="" tag="span" class="person-center">个人中心</router-link></el-dropdown-item>
-            <el-dropdown-item><span style="">退出登录</span></el-dropdown-item>
+            <el-dropdown-item command="logOut"><span>退出登录</span></el-dropdown-item>
            
           </el-dropdown-menu>
         </el-dropdown>
@@ -61,6 +60,18 @@ export default {
     },
     closeDia() {
       this.isShowLogin = false;
+    },
+    handleCommand(cmd){
+      if(cmd=='logOut'){
+          this.$message({
+        type:"success",
+        message:"退出成功"
+      })
+      this.isLogin = false;
+      this.$emit("logOut")
+      }
+     
+    
     }
   }
 };
