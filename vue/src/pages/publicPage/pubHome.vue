@@ -244,6 +244,7 @@ import TopLogo from "@/components/pubHome/topLogo";
 import TopNav from "@/components/pubHome/topNav";
 import PubFooter from "@/components/pubHome/pubFooter";
 import LoginRegister from "@/components/loginRegister/loginRegister";
+import {mapState,mapMutations} from 'vuex'
 export default {
   name: "pubHome",
   components: {
@@ -361,19 +362,9 @@ export default {
     };
   },
   computed:{
-    isLogin:{
-      get(){
-          if(localStorage.getItem("userName")!=""||localStorage.getItem("userName")!=null){
-        return true
-      }else{
-        return false;
-      }
-      },
-    set(val){
-      // console.log(val)
-      this.isLogin = val
-    }
-    }
+   ...mapState([
+     'isLogin'
+   ])
   },
   methods: {
 
@@ -392,8 +383,7 @@ export default {
       this.isShowLogin = false
     },
     // 用户登录
-    userLogin(){
-     
+    userLogin(){   
       this.$http.post(
         "http://localhost:8088/biyesheji/his/PHP/pubaction/index/login",
         this.loginForm
@@ -403,11 +393,12 @@ export default {
     },
     // 点击注销
     logOut(){
-      console.log(this.isLogin)
-      localStorage.removeItem('username')
     },
     moveToReser(pageName){
       this.$router.push({name:pageName})
+      if(this.isLogin==false) {
+        this.isShowLogin=true    
+      }
     }
   }
 };

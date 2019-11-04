@@ -101,7 +101,9 @@ export default {
       this.formType = type;
     },
    doLogin(){
+     console.log(1);
        localStorage.setItem("username",1)
+       this.$store.commit('AUTH_MUTATION')
        this.closeDia()
    },
    doRegister(){

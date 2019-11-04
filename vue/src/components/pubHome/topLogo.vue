@@ -11,7 +11,7 @@
         <span href="javascript:;" class="register" @click="showLogin(2)">注册</span>
       </div>
       <div class="login-register welcome" v-if="isLogin">
-        <el-dropdown  @command="handleCommand">
+        <el-dropdown  @command="handleCommand" trigger="click">
           <span class="el-dropdown-link">
             <span>欢迎您</span>
             <span>周医生</span><i class="el-icon-arrow-down el-icon--right"></i>
@@ -21,8 +21,7 @@
             <el-dropdown-item command="logOut"><span>退出登录</span></el-dropdown-item>
            
           </el-dropdown-menu>
-        </el-dropdown>
-      
+        </el-dropdown>    
       </div>
     </div>
     <login-register :isShowLogin="isShowLogin" @closeDia="closeDia" :ft="formType" />
@@ -31,29 +30,29 @@
 
 <script>
 import LoginRegister from "../loginRegister/loginRegister";
+import {mapState, mapMutations} from "vuex"
 export default {
   name: "",
   data() {
     return {
       isShowLogin: false,
       formType: 1,
-      isLogin: false
+      // isLogin: false
     };
   },
   components: {
     LoginRegister
   },
+  computed:{
+    ...mapState([
+      'isLogin'
+    ])
+  },
   mounted() {
-    if (
-      localStorage.getItem("username") != "" ||
-      localStorage.getItem("username") != null
-    ) {
-      this.isLogin = true;
-    } else {
-      this.isLogin = false;
-    }
+  this.$store.commit('AUTH_MUTATION');
   },
   methods: {
+     ...mapMutations(['AUTH_MUTATION']),
     showLogin(type) {
       this.isShowLogin = true;
       this.formType = type;
@@ -67,7 +66,8 @@ export default {
         type:"success",
         message:"退出成功"
       })
-      this.isLogin = false;
+      localStorage.removeItem('username')
+      this.$store.commit('AUTH_MUTATION')
       this.$emit("logOut")
       }
      
